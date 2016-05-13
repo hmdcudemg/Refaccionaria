@@ -95,7 +95,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,6 +112,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32px-Male-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32px-Inventory-maintenance-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping-cart-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32px-Users-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decrease-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Refaccionaria.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
