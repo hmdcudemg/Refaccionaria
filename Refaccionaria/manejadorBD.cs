@@ -31,6 +31,14 @@ namespace Refaccionaria
             this.usr = "root";
             this.pwd = "root";
         }
+
+        public string cadCon()
+        {
+            string cadcon = "Server={0};Database={1};Uid={2};Pwd={3};";
+            //asignar los valores a los marcadores de posicion
+            cadcon = string.Format(cadcon, servidor, bd, usr, pwd);
+            return cadcon;
+        }
         //metodos
         public string conectarse()
         {
@@ -98,6 +106,24 @@ namespace Refaccionaria
                 desconectarse();
             }
             return res;
+        }
+
+        public MySqlDataReader conexionQuery(String sqlCadena)
+        {
+            MySqlDataReader reader = null;
+            try
+            {
+                conectarse();
+                MySqlCommand instruccion = new MySqlCommand(sqlCadena, conexion);
+                instruccion.CommandText = sqlCadena;
+                reader = instruccion.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+
+            return reader;
         }
 
     }

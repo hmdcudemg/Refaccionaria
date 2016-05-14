@@ -89,7 +89,6 @@
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.Enabled = false;
             this.toolStripButton1.Image = global::Refaccionaria.Properties.Resources.Shopping_cart_icon;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";

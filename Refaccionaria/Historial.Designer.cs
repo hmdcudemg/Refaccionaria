@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.refaccionariaDataSet3 = new Refaccionaria.refaccionariaDataSet3();
-            this.ventasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ventasTableAdapter = new Refaccionaria.refaccionariaDataSet3TableAdapters.ventasTableAdapter();
             this.folioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.refaccionariaDataSet3 = new Refaccionaria.refaccionariaDataSet3();
+            this.ventasTableAdapter = new Refaccionaria.refaccionariaDataSet3TableAdapters.ventasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.refaccionariaDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refaccionariaDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -54,22 +54,8 @@
             this.dataGridView1.DataSource = this.ventasBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(13, 13);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(472, 250);
+            this.dataGridView1.Size = new System.Drawing.Size(637, 250);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // refaccionariaDataSet3
-            // 
-            this.refaccionariaDataSet3.DataSetName = "refaccionariaDataSet3";
-            this.refaccionariaDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ventasBindingSource
-            // 
-            this.ventasBindingSource.DataMember = "ventas";
-            this.ventasBindingSource.DataSource = this.refaccionariaDataSet3;
-            // 
-            // ventasTableAdapter
-            // 
-            this.ventasTableAdapter.ClearBeforeFill = true;
             // 
             // folioVentaDataGridViewTextBoxColumn
             // 
@@ -102,18 +88,32 @@
             this.totalVentaDataGridViewTextBoxColumn.ReadOnly = true;
             this.totalVentaDataGridViewTextBoxColumn.Width = 150;
             // 
+            // ventasBindingSource
+            // 
+            this.ventasBindingSource.DataMember = "ventas";
+            this.ventasBindingSource.DataSource = this.refaccionariaDataSet3;
+            // 
+            // refaccionariaDataSet3
+            // 
+            this.refaccionariaDataSet3.DataSetName = "refaccionariaDataSet3";
+            this.refaccionariaDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ventasTableAdapter
+            // 
+            this.ventasTableAdapter.ClearBeforeFill = true;
+            // 
             // Historial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 275);
+            this.ClientSize = new System.Drawing.Size(662, 275);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Historial";
             this.Text = "Historial - Refaccionaria";
             this.Load += new System.EventHandler(this.Historial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.refaccionariaDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refaccionariaDataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }
