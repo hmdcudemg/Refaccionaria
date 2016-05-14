@@ -23,23 +23,23 @@ namespace Refaccionaria
         /// <param name="bd">Base de datos a la que se va a conectar</param>
         /// <param name="usr">Usuario</param>
         /// <param name="pwd">Contraseña</param>
-        public manejadorBD(string servidor, string bd, string usr, string pwd)
+        public manejadorBD(string servidor, string bd)
         {
             // inicializar atributos
             this.servidor = servidor;
             this.bd = bd;
-            this.usr=usr;
-            this.pwd = pwd;
+            this.usr = "root";
+            this.pwd = "root";
         }
         //metodos
         public string conectarse()
         {
             //retorna el resultado de la conexion
-            string res="";
+            string res = "";
             // Configurar la cadena de conexion
-            string cadcon="Server={0};Database={1};Uid={2};Pwd={3};";
+            string cadcon = "Server={0};Database={1};Uid={2};Pwd={3};";
             //asignar los valores a los marcadores de posicion
-            cadcon=string.Format(cadcon,servidor,bd,usr,pwd);
+            cadcon = string.Format(cadcon, servidor, bd, usr, pwd);
             //instanciar un objeto de conexion
             conexion = new MySqlConnection(cadcon);
             try
@@ -48,7 +48,7 @@ namespace Refaccionaria
                 conexion.Open();
                 res = "hecho";
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 res = ex.Message;
             }
@@ -69,7 +69,7 @@ namespace Refaccionaria
                 MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
                 da.Fill(t);
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
 
             }
@@ -87,7 +87,7 @@ namespace Refaccionaria
             {
                 conectarse();
                 MySqlCommand cmd = new MySqlCommand(instruccion, conexion);
-                res=cmd.ExecuteNonQuery();
+                res = cmd.ExecuteNonQuery();
             }
             catch (MySqlException ex)
             {

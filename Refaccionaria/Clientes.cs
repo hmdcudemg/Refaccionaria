@@ -48,7 +48,7 @@ namespace Refaccionaria
         private void button1_Click(object sender, EventArgs e)
         {
             // probar conexion
-            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria", "root", "root");
+            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
             //configuramos la instruccion
             string instruccion = "INSERT INTO cliente(nombreCliente,apellidoCliente,telefonoCliente,direccionCliente) VALUES('{0}','{1}','{2}','{3}');";
             instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
@@ -69,9 +69,9 @@ namespace Refaccionaria
         private void button3_Click(object sender, EventArgs e)
         {
             // probar conexion
-            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria", "root", "root");
+            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
             //configuramos la instruccion
-            string instruccion = "DELETE FROM cliente WHERE idcliente ='{0}';";
+            string instruccion = "DELETE FROM cliente WHERE idCliente ='{0}';";
             instruccion = string.Format(instruccion, dataGridView1.CurrentRow.Cells[0].Value.ToString());
             //ejecutamos la instruccion
             int res = mbd.ejecutar(instruccion);
@@ -90,7 +90,7 @@ namespace Refaccionaria
         private void button2_Click(object sender, EventArgs e)
         {
             // probar conexion
-            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria", "root", "root");
+            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
             //configuramos la instruccion
             string instruccion = "UPDATE cliente SET nombreCliente='{0}', apellidoCliente='{1}', telefonoCliente='{2}', direccionCliente='{3}' WHERE idCliente='{4}';";
             instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, dataGridView1.CurrentRow.Cells[0].Value.ToString());

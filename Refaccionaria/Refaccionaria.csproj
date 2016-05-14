@@ -89,6 +89,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>refaccionariaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="refaccionariaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>refaccionariaDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +116,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +141,17 @@
     </None>
     <None Include="refaccionariaDataSet.xss">
       <DependentUpon>refaccionariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="refaccionariaDataSet1.xsc">
+      <DependentUpon>refaccionariaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="refaccionariaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>refaccionariaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="refaccionariaDataSet1.xss">
+      <DependentUpon>refaccionariaDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
