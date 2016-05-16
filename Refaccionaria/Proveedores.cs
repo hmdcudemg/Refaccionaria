@@ -44,66 +44,82 @@ namespace Refaccionaria
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // probar conexion
-            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
-            //configuramos la instruccion
-            string instruccion = "INSERT INTO proveedor(nombreProveedor,telefonoProveedor,direccionProveedor) VALUES('{0}','{1}','{2}');";
-            instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text);
-            //ejecutamos la instruccion
-            int res = mbd.ejecutar(instruccion);
-            // validar si se realizo la operacion
-            if (res > 0)
+            try
             {
-                MessageBox.Show("Proveedor Añadido Correctamente");
-                this.proveedorTableAdapter.Fill(this.refaccionariaDataSet1.proveedor);
-            }
-            else
-            {
-                MessageBox.Show("Proveedor NO Añadido Correctamente");
-            }
+                // probar conexion
+                manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
+                //configuramos la instruccion
+                string instruccion = "INSERT INTO proveedor(nombreProveedor,telefonoProveedor,direccionProveedor) VALUES('{0}','{1}','{2}');";
+                instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text);
+                //ejecutamos la instruccion
+                int res = mbd.ejecutar(instruccion);
+                // validar si se realizo la operacion
+                if (res > 0)
+                {
+                    MessageBox.Show("Proveedor Añadido Correctamente");
+                    this.proveedorTableAdapter.Fill(this.refaccionariaDataSet1.proveedor);
+                }
+                else
+                {
+                    MessageBox.Show("Proveedor NO Añadido Correctamente");
+                }
+            }catch(Exception ex) { }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // probar conexion
-            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
-            //configuramos la instruccion
-            string instruccion = "UPDATE proveedor SET nombreProveedor='{0}', telefonoProveedor='{1}', direccionProveedor='{2}' WHERE idProveedor='{3}';";
-            instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text, dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            //ejecutamos la instruccion
-            int res = mbd.ejecutar(instruccion);
-            // validar si se realizo la operacion
-            if (res > 0)
+            try
             {
-                MessageBox.Show("Proveedor Editado Correctamente");
-                this.proveedorTableAdapter.Fill(this.refaccionariaDataSet1.proveedor);
-            }
-            else
-            {
-                MessageBox.Show("Proveedor NO Editado Correctamente");
-            }
+                // probar conexion
+                manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
+                //configuramos la instruccion
+                string instruccion = "UPDATE proveedor SET nombreProveedor='{0}', telefonoProveedor='{1}', direccionProveedor='{2}' WHERE idProveedor='{3}';";
+                instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text, dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                //ejecutamos la instruccion
+                int res = mbd.ejecutar(instruccion);
+                // validar si se realizo la operacion
+                if (res > 0)
+                {
+                    MessageBox.Show("Proveedor Editado Correctamente");
+                    this.proveedorTableAdapter.Fill(this.refaccionariaDataSet1.proveedor);
+                }
+                else
+                {
+                    MessageBox.Show("Proveedor NO Editado Correctamente");
+                }
+            }catch(Exception ex) { }
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // probar conexion
-            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
-            //configuramos la instruccion
-            string instruccion = "DELETE FROM proveedor WHERE idProveedor ='{0}';";
-            instruccion = string.Format(instruccion, dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            //ejecutamos la instruccion
-            int res = mbd.ejecutar(instruccion);
-            // validar si se realizo la operacion
-            if (res > 0)
+            try
             {
-                MessageBox.Show("Proveedor Eliminado Correctamente");
-                this.proveedorTableAdapter.Fill(this.refaccionariaDataSet1.proveedor);
-            }
-            else
-            {
-                MessageBox.Show("Proveedor NO Eliminado Correctamente");
-            }
+                // probar conexion
+                manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
+                //configuramos la instruccion
+                string instruccion = "DELETE FROM proveedor WHERE idProveedor ='{0}';";
+                instruccion = string.Format(instruccion, dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                //ejecutamos la instruccion
+                int res = mbd.ejecutar(instruccion);
+                // validar si se realizo la operacion
+                if (res > 0)
+                {
+                    MessageBox.Show("Proveedor Eliminado Correctamente");
+                    this.proveedorTableAdapter.Fill(this.refaccionariaDataSet1.proveedor);
+                }
+                else
+                {
+                    MessageBox.Show("Proveedor NO Eliminado Correctamente");
+                }
+            }catch(Exception ex) { }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
         }
     }
 }

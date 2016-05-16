@@ -179,5 +179,41 @@ namespace Refaccionaria
                 }
             }
         }
+
+        private void textBox6_Leave(object sender, EventArgs e)
+        {
+            double total = Convert.ToDouble(textBox4.Text);
+            double efectivo = Convert.ToDouble(textBox6.Text);
+
+            if (efectivo >= total)
+            {
+                textBox6.ForeColor = Color.Green;
+                textBox7.Text = Convert.ToString(efectivo - total);
+                button2.Enabled = true;
+            }
+            else
+            {
+                textBox6.ForeColor = Color.Red;
+                button2.Enabled = false;
+            }
+        }
+
+        private void textBox6_Enter(object sender, EventArgs e)
+        {
+            double total = Convert.ToDouble(textBox4.Text);
+            double efectivo = Convert.ToDouble(textBox6.Text);
+
+            if (efectivo >= total)
+            {
+                textBox6.ForeColor = Color.Green;
+                textBox7.Text = Convert.ToString(efectivo - total);
+                button2.Enabled = true;
+            }
+            else
+            {
+                textBox6.ForeColor = Color.Red;
+                button2.Enabled = false;
+            }
+        }
     }
 }

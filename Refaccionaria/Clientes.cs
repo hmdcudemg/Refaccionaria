@@ -47,65 +47,87 @@ namespace Refaccionaria
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // probar conexion
-            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
-            //configuramos la instruccion
-            string instruccion = "INSERT INTO cliente(nombreCliente,apellidoCliente,telefonoCliente,direccionCliente) VALUES('{0}','{1}','{2}','{3}');";
-            instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
-            //ejecutamos la instruccion
-            int res = mbd.ejecutar(instruccion);
-            // validar si se realizo la operacion
-            if (res > 0)
+            try
+            {// probar conexion
+                manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
+                //configuramos la instruccion
+                string instruccion = "INSERT INTO cliente(nombreCliente,apellidoCliente,telefonoCliente,direccionCliente) VALUES('{0}','{1}','{2}','{3}');";
+                instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+                //ejecutamos la instruccion
+                int res = mbd.ejecutar(instruccion);
+                // validar si se realizo la operacion
+                if (res > 0)
+                {
+                    MessageBox.Show("Cliente Añadido Correctamente");
+                    this.clienteTableAdapter.Fill(this.refaccionariaDataSet.cliente);
+                }
+                else
+                {
+                    MessageBox.Show("Cliente NO Añadido Correctamente");
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("Cliente Añadido Correctamente");
-                this.clienteTableAdapter.Fill(this.refaccionariaDataSet.cliente);
-            }
-            else
-            {
-                MessageBox.Show("Cliente NO Añadido Correctamente");
+                
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // probar conexion
-            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
-            //configuramos la instruccion
-            string instruccion = "DELETE FROM cliente WHERE idCliente ='{0}';";
-            instruccion = string.Format(instruccion, dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            //ejecutamos la instruccion
-            int res = mbd.ejecutar(instruccion);
-            // validar si se realizo la operacion
-            if (res > 0)
+            try
             {
-                MessageBox.Show("Cliente Eliminado Correctamente");
-                this.clienteTableAdapter.Fill(this.refaccionariaDataSet.cliente);
-            }
-            else
-            {
-                MessageBox.Show("Cliente NO Eliminado Correctamente");
-            }
+                // probar conexion
+                manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
+                //configuramos la instruccion
+                string instruccion = "DELETE FROM cliente WHERE idCliente ='{0}';";
+                instruccion = string.Format(instruccion, dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                //ejecutamos la instruccion
+                int res = mbd.ejecutar(instruccion);
+                // validar si se realizo la operacion
+                if (res > 0)
+                {
+                    MessageBox.Show("Cliente Eliminado Correctamente");
+                    this.clienteTableAdapter.Fill(this.refaccionariaDataSet.cliente);
+                }
+                else
+                {
+                    MessageBox.Show("Cliente NO Eliminado Correctamente");
+                }
+            }catch(Exception ex) { }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // probar conexion
-            manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
-            //configuramos la instruccion
-            string instruccion = "UPDATE cliente SET nombreCliente='{0}', apellidoCliente='{1}', telefonoCliente='{2}', direccionCliente='{3}' WHERE idCliente='{4}';";
-            instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            //ejecutamos la instruccion
-            int res = mbd.ejecutar(instruccion);
-            // validar si se realizo la operacion
-            if (res > 0)
+            try
             {
-                MessageBox.Show("Cliente Editado Correctamente");
-                this.clienteTableAdapter.Fill(this.refaccionariaDataSet.cliente);
-            }
-            else
+                // probar conexion
+                manejadorBD mbd = new manejadorBD("localhost", "refaccionaria");
+                //configuramos la instruccion
+                string instruccion = "UPDATE cliente SET nombreCliente='{0}', apellidoCliente='{1}', telefonoCliente='{2}', direccionCliente='{3}' WHERE idCliente='{4}';";
+                instruccion = string.Format(instruccion, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                //ejecutamos la instruccion
+                int res = mbd.ejecutar(instruccion);
+                // validar si se realizo la operacion
+                if (res > 0)
+                {
+                    MessageBox.Show("Cliente Editado Correctamente");
+                    this.clienteTableAdapter.Fill(this.refaccionariaDataSet.cliente);
+                }
+                else
+                {
+                    MessageBox.Show("Cliente NO Editado Correctamente");
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("Cliente NO Editado Correctamente");
+
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
         }
     }
 }
