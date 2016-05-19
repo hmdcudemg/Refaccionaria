@@ -212,6 +212,11 @@
     <None Include="Resources\Decrease-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\fondo.png" />
+    <None Include="Resources\Guardar1.png" />
+    <None Include="Resources\Editar1.png" />
+    <None Include="Resources\Eliminar1.png" />
+    <None Include="Resources\Limpiar1.png" />
     <Content Include="Resources\Refaccionaria.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
