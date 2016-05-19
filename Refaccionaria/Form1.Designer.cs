@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Refaccionaria.Properties.Resources.fondo;
+            this.BackgroundImage = global::Refaccionaria.Properties.Resources.fondo___color___difuminado;
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);

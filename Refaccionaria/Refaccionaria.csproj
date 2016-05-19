@@ -217,6 +217,8 @@
     <None Include="Resources\Editar1.png" />
     <None Include="Resources\Eliminar1.png" />
     <None Include="Resources\Limpiar1.png" />
+    <None Include="Resources\fondo - color - difuminado.png" />
+    <None Include="Resources\fondo - color.png" />
     <Content Include="Resources\Refaccionaria.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
